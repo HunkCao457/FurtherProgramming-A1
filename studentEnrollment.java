@@ -41,7 +41,7 @@ public class studentEnrollment {
 
     @Override
     public String toString(){
-        return "Semester: " + semester + ", " + "Course ID: " + courseID + ", " + "Student ID: " + studentID;
+        return "Semester: " + semester + " | " + "Course ID: " + courseID + " | " + "Student ID: " + studentID;
     }
 
 }

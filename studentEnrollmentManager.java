@@ -145,17 +145,17 @@ public class studentEnrollmentManager {
 
             for(int x=0; x<studentEnrollmentList.size(); x++){
                 if(idNum.equals(studentEnrollmentList.get(x).getStudentID())){
-                    System.out.println("Enter semester: ");
+                    System.out.println("Enter new semester: ");
                     sem = in.nextLine();
                     studentEnrollmentList.get(x).setSemester(sem);
                     
-                    System.out.println("Enter course ID: ");
+                    System.out.println("Enter new course ID: ");
                     cou = in.nextLine();
                     studentEnrollmentList.get(x).setCourseID(cou);
                     
                 }
             } 
-        } System.out.println("Student not found, return to Main Menu"); // If the student ID is not found 
+        } System.out.println("Return to Main Menu"); 
         startMenu.menu();
 
     }
@@ -174,11 +174,10 @@ public class studentEnrollmentManager {
             System.out.println("enter student ID");
             idNum = in.nextLine();
 
-            for(int x=0; x<=studentEnrollmentList.size(); x++){
+            for(int x=0; x<studentEnrollmentList.size(); x++){
                 if(idNum.equals(studentEnrollmentList.get(x).getStudentID())){
                     studentEnrollmentList.remove(x);
                     System.out.println("Removed enrolment information of ID: " + idNum);
-                    System.out.println("Return to Main Menu");
                     break;
 
                     // if(studentEnrollmentList.size() == 0){
@@ -190,11 +189,8 @@ public class studentEnrollmentManager {
                     // }
                     
                 }
-                else{
-                    System.out.println("Student not found, return to Main Menu"); 
-                    startMenu.menu();
-                }
-            } 
+            }
+            System.out.println("Return to Main Menu"); 
             startMenu.menu();
         }
 
@@ -211,7 +207,7 @@ public class studentEnrollmentManager {
     public static void printOutData(){
         FileWriter file = null;
         try{
-            file = new FileWriter("OutputData.csv");
+            file = new FileWriter("enrollmentList.csv");
             // Add header
             file.append(HEADER);
             // Add a new line after header

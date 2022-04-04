@@ -109,6 +109,11 @@ public class startMenu {
                 System.exit(0);
             }
 
+            else{
+                System.out.println("Option not defined");
+                menu();
+            }
+
     }
    
 }
