@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class courseList {
-
+    // Get specific course information  
     public static void getCourse(String dataFile){
         List<Course> courses = readCourseFromCSV(dataFile);
         Scanner in = new Scanner(System.in);
@@ -35,6 +35,7 @@ public class courseList {
         }
     }
 
+    // Display all courses
     public static void readAllCourse(String dataFile){
         List<Course> courses = readCourseFromCSV(dataFile);
         for(Course crs : courses){
@@ -43,6 +44,7 @@ public class courseList {
 
     }
 
+    // Read courses data from .csv file
     public static List<Course> readCourseFromCSV(String fileName) {
         List<Course> courses = new ArrayList<>();
         Path pathToFile = Paths.get(fileName);
@@ -63,6 +65,7 @@ public class courseList {
         return courses;
     }
 
+    // Create course information structure
     private static Course createCourse(String[] metadata) { 
         String id = metadata[3]; 
         String name = metadata[4]; 
