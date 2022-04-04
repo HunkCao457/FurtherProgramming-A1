@@ -71,7 +71,7 @@ public class courseList {
         String name = metadata[4]; 
         String numberOfCredit = metadata[5]; 
         
-        // create and return book of this metadata 
+        // create and return course of this metadata 
         return new Course (id, name, numberOfCredit); 
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class studentList {
-
+    // Get specific student information
     public static void getStudent(String dataFile){
         List<Student> students = readStudentFromCSV(dataFile);
         Scanner in = new Scanner(System.in);
@@ -36,6 +36,7 @@ public class studentList {
         }
     }
 
+    // Display all students
     public static void readAllStudent(String dataFile){
         List<Student> students = readStudentFromCSV(dataFile);
         for(Student std : students){
@@ -44,6 +45,7 @@ public class studentList {
 
     }
 
+    // Read students data from .csv file
     public static List<Student> readStudentFromCSV(String fileName) {
         List<Student> students = new ArrayList<>();
         Path pathToFile = Paths.get(fileName);
@@ -63,12 +65,13 @@ public class studentList {
         }
             return students;
     }
+    // Create student information structure
     private static Student createStudent(String[] metadata) { 
         String id = metadata[0]; 
         String name = metadata[1]; 
         String birthDate = metadata[2]; 
                 
-        // create and return book of this metadata 
+        // create and return student of this metadata 
         return new Student(id, name, birthDate); 
     }
 

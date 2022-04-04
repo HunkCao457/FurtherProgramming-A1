@@ -36,7 +36,7 @@ public class Course{
     
     @Override
     public String toString(){
-        return "Course [id=" + id + ", name=" + name + ", numberOfCredit=" + numberOfCredit + "]";
+        return "Course [ID: " + id + " | " + "Name: " + name + " | " + "Number of Credit: " + numberOfCredit + "]";
     }
 
 }

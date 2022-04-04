@@ -15,7 +15,7 @@ public class studentEnrollmentManager {
         int total;
 
         do{
-            System.out.println("number of student in this course: ");   // The total number will be used to generate array
+            System.out.println("Number of enrollment you want to add: ");   // The total number will be used to generate array
             total = in.nextInt();
 
             studentEnrollment[] stdEnroll = new studentEnrollment[total];
@@ -25,20 +25,20 @@ public class studentEnrollmentManager {
                 System.out.println("Enrollment info");
                 System.out.println("Press ENTER to continue");
                 in.nextLine();
-                System.out.println("semester");
+                System.out.println("Semester");
                 stdEnroll[index].setSemester(in.nextLine());
 
-                System.out.println("student id");
+                System.out.println("Student ID");
                 stdEnroll[index].setStudentID(in.nextLine());
 
-                System.out.println("course id");
+                System.out.println("Course ID");
                 stdEnroll[index].setCourseID(in.nextLine());
 
                 studentEnrollmentList.add(stdEnroll[index]);
                 
             }
 
-            System.out.println("would u like to add more student (y/n)?");
+            System.out.println("Would u like to add more student (y/n)?");  // Allow to add more enrollments
             String answer = in.next();
             ans = answer.charAt(0);
 
@@ -46,6 +46,7 @@ public class studentEnrollmentManager {
         startMenu.menu();
     }
 
+    // Display all enrollments function
     public static void displayAll(){
         Scanner in = new Scanner(System.in);
         if(studentEnrollmentList.size() == 0){
@@ -60,6 +61,7 @@ public class studentEnrollmentManager {
         } startMenu.menu();
     }
 
+    // Display all courses in one semester function
     public static void displayAllCourseInOneSemester(){
         Scanner in = new Scanner(System.in);
         String semester;
@@ -82,6 +84,7 @@ public class studentEnrollmentManager {
         
     }
 
+    // Display all students in one course
     public static void displayAllStudentInOneCourse(){
         Scanner in = new Scanner(System.in);
         String course;
@@ -104,6 +107,7 @@ public class studentEnrollmentManager {
         startMenu.menu();
     }
 
+    // Display all courses of one student function
     public static void displayAllCourseOfOneStudent(){
         Scanner in = new Scanner(System.in);
         String student;
@@ -119,12 +123,13 @@ public class studentEnrollmentManager {
                 if(student.equals(studentEnrollmentList.get(i).getStudentID())){
                     System.out.println("Course ID of selected student: " + studentEnrollmentList.get(i).getCourseID().toString());
                 } 
-            } System.out.println("Press ENTER to return to Main Menu"); 
+            } System.out.println("Press ENTER to return to Main Menu");     
             in.nextLine();
         } startMenu.menu();
         
     }
 
+    // Update enrollment method
     public static void updateStudentEnrollment(){
         Scanner in = new Scanner(System.in);
         String sem;
@@ -150,11 +155,12 @@ public class studentEnrollmentManager {
                     
                 }
             } 
-        } System.out.println("Student not found, return to Main Menu"); 
+        } System.out.println("Student not found, return to Main Menu"); // If the student ID is not found 
         startMenu.menu();
 
     }
 
+    // Delete enrollment function
     public static void deleteEnrollment(){
         Scanner in = new Scanner(System.in);
         String idNum;
@@ -174,6 +180,7 @@ public class studentEnrollmentManager {
                     System.out.println("Removed enrolment information of ID: " + idNum);
                     System.out.println("Return to Main Menu");
                     break;
+
                     // if(studentEnrollmentList.size() == 0){
                     //     System.out.println("List empty");
                     //     startMenu.menu();
@@ -199,6 +206,8 @@ public class studentEnrollmentManager {
     private static final String SEPARATOR = "\n";
 
     private static final String HEADER = "Semester,StudentID,CourseID";
+
+    // Print out data function
     public static void printOutData(){
         FileWriter file = null;
         try{

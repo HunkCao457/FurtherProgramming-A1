@@ -3,31 +3,37 @@ import java.util.Scanner;
 
 public class startMenu {
     public static void menu(){
-        // Scanner populateData = new Scanner(System.in);
-        // populateData = null;
-        // while(populateData != null){
+       
             Scanner in = new Scanner(System.in);
             Scanner in1 = new Scanner(System.in);
 
             int choice = 0;
             String option;
 
+            // Menu layout
             System.out.print("*********STUDENT RECORD SYSTEM*********\n\n");
             System.out.println("\t MENU ");
-            System.out.println("[1] UPLOAD DATA");
-            System.out.println("[2] GET ALL STUDENT DATA FROM UPLOADED FILE");
-            System.out.println("[3] GET ALL COURSE DATA FROM UPLOADED FILE");
-            System.out.println("[2] ADD ENROLLMENT INFORMATION");
-            System.out.println("[3] DISPLAY ALL ENROLMENT INFORMATION");
-            System.out.println("[4] DISPLAY ALL COURSES FOR ONE STUDENT");
-            System.out.println("[5] DISPLAY ALL STUDENT IN ONE COURSE");
-            System.out.println("[6] DISPLAY ALL COURSES IN ONE SEMESTER");
-            System.out.println("[7] UPDATE ENROLLMENT INFORMATION");
-            System.out.println("[8] DELETE ENROLLMENT INFORMATION");
-            System.out.println("[9]EXIT");
-            System.out.println("?");
+            System.out.println("[1]- UPLOAD DATA -[1]");
+            System.out.println("[2]- GET ALL STUDENT DATA FROM UPLOADED FILE -[2]");
+            System.out.println("[3]- GET ALL COURSE DATA FROM UPLOADED FILE -[3]");
+            System.out.println("[4]- GET SPECIFIC STUDENT INFORMATION -[4]");
+            System.out.println("[5]- GET SPECIFIC COURSE INFORMATION -[5]");
+            System.out.println("[6]- ADD ENROLLMENT INFORMATION -[6]");
+            System.out.println("[7]- DISPLAY ALL ENROLMENT INFORMATION -[7]");
+            System.out.println("[8]- DISPLAY ALL COURSES OF ONE STUDENT -[8]");
+            System.out.println("[9]- DISPLAY ALL STUDENT IN ONE COURSE -[9]");
+            System.out.println("[10]- DISPLAY ALL COURSES IN ONE SEMESTER -[10]");
+            System.out.println("[11]- UPDATE ENROLLMENT INFORMATION -[11]");
+            System.out.println("[12]- DELETE ENROLLMENT INFORMATION -[12]");
+            System.out.println("[13]- PRINT OUT ENROLLMENT LIST -[13]");
+            System.out.println("[14]- EXIT -[14]");
+            System.out.println("***************-----***************");
 
+            // Take input from user
+            System.out.println("Your option (1-14): ");
             choice = in.nextInt();
+            
+            // Choice option
             if (choice == 1) 
             {   
                 System.out.println("Enter file name to upload:");
@@ -96,11 +102,11 @@ public class startMenu {
             }
 
             else if (choice == 13){
-                System.exit(0);
+                studentEnrollmentManager.printOutData();
             }
 
             else if (choice == 14){
-                studentEnrollmentManager.printOutData();
+                System.exit(0);
             }
 
     }
